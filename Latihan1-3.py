@@ -72,26 +72,26 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
 print("You're at a cross road. Where do you want to go?\t")
-direction = input('type "left" or "right"\t')
-if direction == "right":
+direction = input('type "left" or "right"\t').lower()
+if direction == "right" and direction == "left":
     print("Fall into a hole.\tGame Over.")
 elif direction == "left":
 
     print("You've come to a lake. There is and island in the middle of the lake.")
-    moment = input('Type "wait" to wait for a boat. Type "swim" to swim across.\t')
+    moment = input('Type "wait" to wait for a boat. Type "swim" to swim across.\t').lower()
     if moment == "swim":
         print("You Attacked by trout.\tGame Over.")
     elif moment == "wait":
 
         print("You arrive at the island unharmed. There is a house with 3 doors.")
-        doors = input("One red, One yellow and One blue. Which colour do you choose?")
+        doors = input("One red, One yellow and One blue. Which colour do you choose?").lower()
         if doors == "red":
             print("You Burned by Fire.\tGame Over.")
-        elif doors == "blue":
+        elif not doors == "blue":
             print("Eaten by beasts.\tGame Over.")
         elif doors == "yellow":
             print("!!!CONGRATULATIONS YOU WIN!!!")
         else:
             print("Game Over")
-
-print("Refresh to Retry Again LOL")
+else:
+    print("Refresh to Retry Again")
